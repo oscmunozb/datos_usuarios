@@ -1,14 +1,7 @@
-//1) Traer datos de api y mostrarlos por consola
-// https://randomuser.me/api/?results=10
-//2) recorrer data.results y mostrarlos en el HTML
-
-{/* <div id="user-data"></div> */ }
-
 const getUsers = (() => {
     const contenedor = document.querySelector('#user-data');
     return {
         show: async () => {
-
             let respuesta = await fetch('https://randomuser.me/api/?results=10');
             let data = await respuesta.json();
             console.log(data.results);
@@ -18,8 +11,6 @@ const getUsers = (() => {
                 <span>${perfil.email}</span><br>
                 <span>${perfil.phone}</span><br>`
             )
-
-
             contenedor.innerHTML = userInfo.join('');
         }
     }
